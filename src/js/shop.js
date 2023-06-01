@@ -6,15 +6,15 @@ import {SELECTED_SHOP_KEY, CHOSEN_GOODS_KEY} from "./variables/constants.js"
 let shops = [];
 
 //Робота з розміткою
-async function insertShopMarkup () {
-    const response  = await fetch(`https://delivery-app-yurii.herokuapp.com/api/shops`);
+async function insertShopMarkup() {
+    const response = await fetch(`https://delivery-app-yurii.herokuapp.com/api/shops`);
     shops = (await response.json()).map(shop => ({id: shop._id, shopName: shop.shopName, goods: shop.goods}));
 
     const shopsMarkup = markup.createShopMarkup(shops);
     markup.addMarkup(shopsMarkup, refs.shopListRef);
 }
 
-function insertGoodsMarkup () {
+function insertGoodsMarkup() {
     const shopId = localStorage.getFromLocalStorage(SELECTED_SHOP_KEY);
     const currentShop = shops.find(shop => shop.id === shopId);
     const goodsMarkup = markup.createGoodsMarkup(currentShop);
@@ -22,7 +22,7 @@ function insertGoodsMarkup () {
 }
 
 //Обробники подій
-function onShopsListClick (event) {
+function onShopsListClick(event) {
     if (event.target === event.currentTarget) {
         return
     }
@@ -31,7 +31,7 @@ function onShopsListClick (event) {
 
     const cartGoods = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
 
-    if(Array.isArray(cartGoods) && cartGoods.length > 0) {
+    if (Array.isArray(cartGoods) && cartGoods.length > 0) {
         if (shopId !== cartGoods[0].shopId) {
             alert("You can select goods only from 1 shop")
             return
@@ -52,7 +52,7 @@ function onAddToCartClick(event) {
     const goodsId = Number(event.target.parentNode.dataset.id);
 
     const shop = shops.find(item => item.id === shopId);
-    const selectedGoods =  shop.goods.find(item => item.id === goodsId);
+    const selectedGoods = shop.goods.find(item => item.id === goodsId);
 
     const cartObj = {
         quantity: 1,
@@ -63,7 +63,7 @@ function onAddToCartClick(event) {
     localStorage.addToLocalStorage(CHOSEN_GOODS_KEY, [cartObj]);
 }
 
-async function init () {
+async function init() {
     await insertShopMarkup();
     insertGoodsMarkup();
 }
