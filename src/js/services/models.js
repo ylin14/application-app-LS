@@ -1,4 +1,4 @@
-import shops from "../../dataBaseImitation/shops.json" assert { type: "json" };;
+// import shops from "../../dataBaseImitation/shops.json" assert { type: "json" };
 
 export function createGoodsModel (obj) {
     const shop = shops.find(item => item.id === obj.shopId);
