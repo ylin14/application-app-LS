@@ -7,7 +7,6 @@
     background-color: #E0E0E2;
     display: flex;
     align-items: center;
-    list-style-type: none;
 }
 
 .header__logo {
@@ -28,6 +27,7 @@
     max-width: 1300px;
     flex: 1 1 1300px;
     justify-content: space-between;
+    list-style-type: none;
 }
 .navigation-item {
 }
