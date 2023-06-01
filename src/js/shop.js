@@ -28,8 +28,17 @@ function onShopsListClick (event) {
     }
 
     const shopId = event.target.dataset.id;
-    localStorage.addToLocalStorage(SELECTED_SHOP_KEY, shopId);
 
+    const cartGoods = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
+
+    if(Array.isArray(cartGoods) && cartGoods.length > 0) {
+        if (shopId !== cartGoods[0].shopId) {
+            alert("You can select goods only from 1 shop")
+            return
+        }
+    }
+
+    localStorage.addToLocalStorage(SELECTED_SHOP_KEY, shopId);
     insertGoodsMarkup();
 }
 
@@ -37,6 +46,7 @@ function onAddToCartClick(event) {
     if (event.target.classList.value !== "addToCart") {
         return
     }
+
 
     const shopId = localStorage.getFromLocalStorage(SELECTED_SHOP_KEY);
     const goodsId = Number(event.target.parentNode.dataset.id);
