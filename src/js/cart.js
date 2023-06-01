@@ -22,16 +22,17 @@ function onButtonClickHandler(event) {
     const selectedGoods = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
     if(event.target.classList.value === "removeItemButton") {
         const clickedGood = Number(event.target.parentNode.dataset.goodsid);
-        const clickedShop = Number(event.target.parentNode.dataset.shopid);
-
+        const clickedShop = event.target.parentNode.dataset.shopid;
         updatedGoods = selectedGoods.filter(({id, shopId}) => id !== clickedGood || shopId !== clickedShop);
+        localStorage.updateLocalStorage(CHOSEN_GOODS_KEY, updatedGoods)
+        insertGoodsMarkup ();
     }
 
     if (event.target.classList[0] === "button") {
         const goodsId = event.target.parentNode.parentNode;
 
         const clickedGood = Number(goodsId.dataset.goodsid);
-        const clickedShop = Number(goodsId.dataset.shopid);
+        const clickedShop = goodsId.dataset.shopid;
 
         const goods = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
         const elementIndex = goods.findIndex(({id, shopId}) => id === clickedGood && shopId === clickedShop);
@@ -43,27 +44,48 @@ function onButtonClickHandler(event) {
             }
         }
         updatedGoods = [...goods];
-
+        localStorage.updateLocalStorage(CHOSEN_GOODS_KEY, updatedGoods)
+        insertGoodsMarkup ();
     }
 
-    localStorage.updateLocalStorage(CHOSEN_GOODS_KEY, updatedGoods)
-    insertGoodsMarkup ();
 
 }
 
-function onClearCartBtnClick(event) {
+function onClearCartBtnClick() {
     localStorage.deleteFromLocalStorage(CHOSEN_GOODS_KEY);
     insertGoodsMarkup();
 }
 
-function onSubmit (event) {
+async function onSubmit (event) {
     event.preventDefault();
-    // const form = refs.formRef.elements;
-    //
-    // const orderDataObj = getOrderData(form);
-    //
-    // console.log(orderDataObj);
+    const form = refs.formRef.elements;
+    const goods = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
 
+    if (!goods || !goods.length) {
+        alert("Please, chose some goods, bro")
+        return
+    }
+
+    const order = {
+        goods,
+        customer: {
+            name: form[0].value,
+            email: form[1].value,
+            phone: form[2].value,
+            address: form[3].value
+        }
+    }
+
+    const options = {
+        method: "POST",
+        body: JSON.stringify(order),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        }
+    }
+    await fetch("http://localhost:3001/api/orders", options);
+    onClearCartBtnClick();
+    alert("Your order is successful! :)")
 }
 
 //Хелперси
@@ -73,25 +95,6 @@ function totalAmountCounter(goodsArr) {
         return acc;
     }, 0)
 }
-
-
-
-function getOrderData (form) {
-    const order = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
-    const totalPrice = totalAmountCounter(order);
-
-    return {
-        client: {
-            name: form[0].value,
-            email: form[1].value,
-            phone: form[2].value,
-            address: form[3].value
-        },
-        order,
-        totalPrice
-    }
-}
-
 
 function init () {
     insertGoodsMarkup();

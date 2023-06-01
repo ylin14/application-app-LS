@@ -1,6 +1,5 @@
 import markup from "./markup/index.js"
 import {refs} from "./variables/refs.js"
-// import shops from "../dataBaseImitation/shops.json" assert { type: "json" };
 import localStorage from "./services/index.js"
 import {SELECTED_SHOP_KEY, CHOSEN_GOODS_KEY} from "./variables/constants.js"
 
