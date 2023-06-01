@@ -73,7 +73,8 @@ async function onSubmit (event) {
             email: form[1].value,
             phone: form[2].value,
             address: form[3].value
-        }
+        },
+        totalPrice: refs.totalAmount.value
     }
 
     const options = {
@@ -85,7 +86,11 @@ async function onSubmit (event) {
     }
     await fetch("https://delivery-app-yurii.herokuapp.com/api/orders", options);
     onClearCartBtnClick();
+    for (let i = 0; i < form.length; i += 1) {
+        form[i].value = '';
+    }
     alert("Your order is successful! :)")
+
 }
 
 //Хелперси
