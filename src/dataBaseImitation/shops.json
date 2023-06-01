@@ -1,0 +1,10 @@
+[{"shopName":"OkWine",
+  "goods": [{ "id":1, "goodsName":"Okhart","price": 15, "link":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Tor-logo-2011-flat.svg/1200px-Tor-logo-2011-flat.svg.png"},{"id":2,"goodsName":"Wine","price": 11,"link":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Tor-logo-2011-flat.svg/1200px-Tor-logo-2011-flat.svg.png"},{"id":3,"goodsName":"Gin","price":  10,"link":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Tor-logo-2011-flat.svg/1200px-Tor-logo-2011-flat.svg.png"}],
+  "id": 1
+},{"shopName":"Pid",
+  "goods": [{"id":1,"goodsName":"Dido","price":  10,"link":"https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/150px-DuckDuckGo_logo.svg.png"},{"id":2,"goodsName":"Babo","price":  10,"link":"https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/150px-DuckDuckGo_logo.svg.png"},{"id":3,"goodsName":"Kolobok","price":  10,"link":"https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/150px-DuckDuckGo_logo.svg.png"}],
+  "id": 2
+},{"shopName":"Oras",
+  "goods": [{"id":1,"goodsName":"Orest Hulkovich","price":  10,"link":"https://shorturl.at/suIL1"},{"id":2,"goodsName":"Bilbo Tor","price":  10,"link":"https://shorturl.at/suIL1"},{"id":3,"goodsName":"Hugrid Iron","price":  10,"link":"https://shorturl.at/suIL1"}],
+  "id": 3
+}]

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header>
+    <nav class="navigation">
+        <ul class="navigation-list">
+            <li class="navigation-item">
+                <a
+                        href="./shop.html"
+                        class="nav-link"
+                >Shop</a
+                >
+            </li>
+            <li class="navigation-item">
+                <a
+                        href="./cart.html"
+                        class="nav-link current"
+                >Cart</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+    <form class="orderForm">
+        <div class="formInput">
+            <label for="name">Enter your name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="formInput">
+            <label for="email">Enter your Email: </label>
+            <input type="text" name="name" id="email" required>
+        </div>
+        <div class="formInput">
+            <label for="phone">Enter your phone: </label>
+            <input type="text" name="name" id="phone" required>
+        </div>
+        <div class="formInput">
+            <label for="adress">Enter your adress: </label>
+            <input type="text" name="name" id="adress" required>
+        </div>
+        <button type="submit" class="button submitButton">Submit</button>
+    </form>
+    <ul class="cartGoods">
+
+    </ul>
+    </div>
+    <div>
+        <p class="totalPrice"></p>
+    </div>
+    <button type="button" class="button clearCart">Clear cart</button>
+</main>
+</body>
+
+<script src="./src/js/cart.js" type="module"></script>
+
+</html>
