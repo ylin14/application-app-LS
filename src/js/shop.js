@@ -7,7 +7,7 @@ let shops = [];
 
 //Робота з розміткою
 async function insertShopMarkup () {
-    const response  = await fetch(`http://localhost:3001/api/shops`);
+    const response  = await fetch(`https://delivery-app-yurii.herokuapp.com/api/shops`);
     shops = (await response.json()).map(shop => ({id: shop._id, shopName: shop.shopName, goods: shop.goods}));
 
     const shopsMarkup = markup.createShopMarkup(shops);

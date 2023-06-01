@@ -83,7 +83,7 @@ async function onSubmit (event) {
             "Content-Type": "application/json; charset=UTF-8",
         }
     }
-    await fetch("http://localhost:3001/api/orders", options);
+    await fetch("https://delivery-app-yurii.herokuapp.com/api/orders", options);
     onClearCartBtnClick();
     alert("Your order is successful! :)")
 }
