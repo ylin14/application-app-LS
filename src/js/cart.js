@@ -8,7 +8,7 @@ import orders from "../dataBaseImitation/orders.json" assert { type: "json" };
 function insertGoodsMarkup () {
     const cartItems = localStorage.getFromLocalStorage(CHOSEN_GOODS_KEY);
     const goods = cartItems ? cartItems : [];
-    const totalAmount = totalAmountCounter(goods);
+    const totalAmount = `Total amount: ${totalAmountCounter(goods)}$`;
 
     refs.totalAmount.textContent = totalAmount;
     const cartMarkup = markup.createCartGoodsMarkup(goods);
