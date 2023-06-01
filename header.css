@@ -1,34 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;800&display=swap');
+
+.header {
+    width: 100%;
+    height: 100px;
+    font-family: 'Syne', sans-serif;
+    background-color: #E0E0E2;
+    display: flex;
+    align-items: center;
+    
+
+    
+}
+
+.header__logo {
+    color: black;
+    font-size: 38px;
+}
+.green {
+    color: #588157;
+}
 .navigation {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
 }
-
 .navigation-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    position: relative;
+    display: flex;
+    max-width: 1300px;
+    flex: 1 1 1300px;
+    justify-content: space-between;
 }
-
 .navigation-item {
-    display: inline-block;
-    margin-right: 20px;
 }
-
 .nav-link {
-    font-family: "Arial", sans-serif;
-    font-size: 16px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #666;
-    padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 28px;
+    color: black;
+    
 }
-
-.current {
-    font-weight: bold;
-    background-color: #ccc;
+.active {
+    text-decoration-line: underline;
+    text-decoration-color: #588157;
+}
+.header__tools {
+    display: flex;
+    justify-self: flex-end;
+    
+}
+.tools__body {
+}
+.tools__list {
+    display: flex;
+    column-gap: 20px;
+}
+.tools__link {
+}
+.tools__git {
+}
+.tools__in {
+}
+.tools__telegram {
 }

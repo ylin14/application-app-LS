@@ -1,5 +1,41 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Syne:wght@400;500;600;800&display=swap');
+
+.main {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.main__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+.main__content {
     display: flex;
+    
+    
+}
+
+.main__nav {
+    width: 100%;
+    max-width: 300px;
+    border: 3px solid #E0E0E2;
+    border-radius: 10px;
+    padding-top: 20px;
+    height: 70vh;
+    margin-right: 20px;
+}
+
+.main__products {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    border: 3px solid #E0E0E2;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.container {
+    
+    
 }
 
 .shopList {
@@ -16,29 +52,46 @@
 
 .shopItem {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     text-decoration: none;
     display: block;
-    padding: 0 15px;
+    padding: 15px 0px;
     line-height: 25px;
+    font-size: 28px;
+    text-align: center;
+    width: 200px;
+    background-color: #588157;
+    color: #FFFFFF;
+    
 
 }
 
 .shopItem:focus,
 .shopItem:hover {
-    background-color: #f7f7f7;
+    transition: 0.5s all ease 0s;
+    background-color: #3a5a40;
+}
+
+.goodsListWrap {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 50px;
+   
 }
 
 .goodsItem {
     flex-basis: calc(50% - 10px);
-    background-color: #f7f7f7;
-    padding: 10px;
-    border-radius: 5px;
+    border: 3px solid #E0E0E2;
+    padding: 20px;
+    border-radius: 15px;
     list-style-type: none;
+    height: fit-content;
+    max-width: 220px;
 }
 
 .image {
     width: 100%;
+    max-width: 190px;
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
@@ -47,15 +100,17 @@
 .title {
     font-weight: bold;
     margin-top: 10px;
+    font-size: 20px;
 }
 
 .price {
-    margin-top: 5px;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 .addToCart {
-    margin-top: auto;
-    background-color: #666;
+    margin-top: 10px;
+    background-color: #588157;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -64,5 +119,6 @@
 
 .addToCart:hover,
 .addToCart:focus {
-    background-color: #333;
+    transition: 0.5s all ease 0s;
+    background-color: #3a5a40;
 }
