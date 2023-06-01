@@ -59,7 +59,6 @@ function onAddToCartClick(event) {
         shopId: shopId,
         ...selectedGoods
     }
-    console.log(cartObj)
     localStorage.addToLocalStorage(CHOSEN_GOODS_KEY, [cartObj]);
 }
 
